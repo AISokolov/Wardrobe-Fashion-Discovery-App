@@ -1,9 +1,9 @@
 # The Social Network for Fashion  
 ## Project Charter – Wardrobe
 
-**Viktor Taseski** (89231157)  
-**Mario Krajoski** (89231110)  
-**Aleksandr Sokolov** (89231170)
+**Viktor Taseski** 	(89231157)  
+**Mario Krajoski** 	(89231110)  
+**Aleksandr Sokolov** 	(89231170)
 
 ---
 
