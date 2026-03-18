@@ -93,6 +93,20 @@ function bindEvents() {
   document.addEventListener("keydown", handleKeydown);
 }
 
+function rerenderPreservingFeedScroll() {
+  const feed = document.querySelector(".feed-list");
+  const scrollTop = feed ? feed.scrollTop : 0;
+
+  render();
+
+  requestAnimationFrame(() => {
+    const nextFeed = document.querySelector(".feed-list");
+    if (nextFeed) {
+      nextFeed.scrollTop = scrollTop;
+    }
+  });
+}
+
 function handleClick(event) {
   const button = event.target.closest("[data-action]");
   const tab = event.target.closest("[data-tab]");
@@ -114,17 +128,17 @@ function handleClick(event) {
   const { action, id, category } = button.dataset;
 
   if (action === "toggle-like") {
-    toggleSet(state.liked, id);
-    persistState();
-    render();
-  }
+  toggleSet(state.liked, id);
+  persistState();
+  rerenderPreservingFeedScroll();
+ }
 
   if (action === "toggle-save") {
-    toggleSet(state.saved, id);
-    persistState();
-    render();
-    showToast(state.saved.has(id) ? "Saved to closet" : "Removed from closet");
-  }
+  toggleSet(state.saved, id);
+  persistState();
+  rerenderPreservingFeedScroll();
+  showToast(state.saved.has(id) ? "Saved to closet" : "Removed from closet");
+ }
 
   if (action === "open-detail") {
     state.activeDetailId = id;
