@@ -1,0 +1,12 @@
+<svg width="640" height="960" viewBox="0 0 640 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="960" fill="#251E1A"/>
+  <circle cx="112" cy="148" r="82" fill="#6A4A32"/>
+  <circle cx="525" cy="182" r="114" fill="#403027"/>
+  <rect y="685" width="640" height="275" fill="#160F0D"/>
+  <path d="M320 160L249 213L169 250L211 340L249 324V785H391V324L429 340L471 250L391 213L320 160Z" fill="#1B1B1B"/>
+  <path d="M292 184C301 167 309 152 320 142C331 152 339 167 348 184" stroke="#94765F" stroke-width="10" stroke-linecap="round"/>
+  <text x="320" y="500" fill="#F3F1EC" font-family="Helvetica, Arial, sans-serif" font-size="64" font-weight="700" text-anchor="middle">THURSDAY</text>
+  <path d="M169 250C177 206 214 178 258 178H382C426 178 463 206 471 250" stroke="#2B2B2B" stroke-width="10"/>
+  <path d="M212 785L159 855" stroke="#2A1A17" stroke-width="22" stroke-linecap="round"/>
+  <path d="M428 785L481 855" stroke="#2A1A17" stroke-width="22" stroke-linecap="round"/>
+</svg>

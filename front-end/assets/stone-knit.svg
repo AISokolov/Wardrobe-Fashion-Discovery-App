@@ -1,0 +1,18 @@
+<svg width="640" height="960" viewBox="0 0 640 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="960" fill="#111214"/>
+  <rect y="744" width="640" height="216" fill="#1C1D20"/>
+  <circle cx="109" cy="175" r="92" fill="#1A2028"/>
+  <circle cx="527" cy="155" r="110" fill="#1B1721"/>
+  <path d="M250 198H390L468 296L424 371L386 345V792H254V345L216 371L172 296L250 198Z" fill="url(#hoodie)"/>
+  <path d="M273 198C285 169 299 149 320 130C341 149 355 169 367 198" stroke="#1B1D1F" stroke-width="14" stroke-linecap="round"/>
+  <path d="M320 260V792" stroke="#212427" stroke-width="12"/>
+  <path d="M273 321L229 579" stroke="#2A2D31" stroke-width="12" stroke-linecap="round"/>
+  <path d="M367 321L411 579" stroke="#2A2D31" stroke-width="12" stroke-linecap="round"/>
+  <rect x="266" y="535" width="108" height="66" rx="22" stroke="#2A2D31" stroke-width="10"/>
+  <defs>
+    <linearGradient id="hoodie" x1="320" y1="198" x2="320" y2="792" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#24272B"/>
+      <stop offset="1" stop-color="#111214"/>
+    </linearGradient>
+  </defs>
+</svg>

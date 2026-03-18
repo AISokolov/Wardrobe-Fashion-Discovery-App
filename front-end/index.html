@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wardrobe Prototype</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="desktop-stage">
+      <div class="phone-shell">
+        <div class="phone-glow"></div>
+        <div class="phone-bezel">
+          <div class="phone-notch"></div>
+          <div class="app-shell">
+            <header class="status-bar" aria-hidden="true">
+              <span>9:41</span>
+              <div class="status-icons">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </header>
+
+            <main id="app" class="app-content"></main>
+
+            <nav class="tab-bar" aria-label="Primary">
+              <button class="tab-button active" data-tab="explore">
+                <span class="tab-icon">✦</span>
+                <span>Explore</span>
+              </button>
+              <button class="tab-button" data-tab="closet">
+                <span class="tab-icon">▣</span>
+                <span>Closet</span>
+              </button>
+              <button class="tab-button" data-tab="inbox">
+                <span class="tab-icon">◔</span>
+                <span>Inbox</span>
+              </button>
+              <button class="tab-button" data-tab="profile">
+                <span class="tab-icon">◉</span>
+                <span>Profile</span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="detail-modal" class="detail-modal hidden" aria-hidden="true"></div>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
