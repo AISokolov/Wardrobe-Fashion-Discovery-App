@@ -28,20 +28,76 @@ const compactFormatter = new Intl.NumberFormat("en-US", {
 });
 
 const stories = [
-  { initials: "You", name: "your fit", color: "linear-gradient(135deg,#694720,#1a1510)" },
-  { initials: "SR", name: "sofia_r", color: "linear-gradient(135deg,#213651,#111726)" },
-  { initials: "JM", name: "jake.m", color: "linear-gradient(135deg,#163a2c,#101916)" },
-  { initials: "VH", name: "vintghunt", color: "linear-gradient(135deg,#4d2122,#1e1213)" },
-  { initials: "PK", name: "priya.k", color: "linear-gradient(135deg,#36204c,#17101d)" },
+  {
+    initials: "You",
+    name: "your fit",
+    color: "linear-gradient(135deg,#694720,#1a1510)",
+  },
+  {
+    initials: "SR",
+    name: "sofia_r",
+    color: "linear-gradient(135deg,#213651,#111726)",
+  },
+  {
+    initials: "JM",
+    name: "jake.m",
+    color: "linear-gradient(135deg,#163a2c,#101916)",
+  },
+  {
+    initials: "VH",
+    name: "vintghunt",
+    color: "linear-gradient(135deg,#4d2122,#1e1213)",
+  },
+  {
+    initials: "PK",
+    name: "priya.k",
+    color: "linear-gradient(135deg,#36204c,#17101d)",
+  },
 ];
 
 const messages = [
-  { initials: "FC", name: "The Fits Council", preview: "Mia: omg that fit pic tho", time: "2m", count: 3 },
-  { initials: "SR", name: "Sofia R.", preview: "that jacket is EVERYTHING", time: "5m", count: 1 },
-  { initials: "JM", name: "Jake M.", preview: "can I borrow the grey hoodie?", time: "12m", count: 0 },
-  { initials: "SD", name: "Summer Drip", preview: "You: lmaooo the shorts though", time: "1h", count: 0 },
-  { initials: "PK", name: "Priya K.", preview: "she liked your outfit post", time: "3h", count: 0 },
-  { initials: "VH", name: "Vintage Hunters", preview: "Alex: found a Helmut Lang jacket!", time: "5h", count: 7 },
+  {
+    initials: "FC",
+    name: "The Fits Council",
+    preview: "Mia: omg that fit pic tho",
+    time: "2m",
+    count: 3,
+  },
+  {
+    initials: "SR",
+    name: "Sofia R.",
+    preview: "that jacket is EVERYTHING",
+    time: "5m",
+    count: 1,
+  },
+  {
+    initials: "JM",
+    name: "Jake M.",
+    preview: "can I borrow the grey hoodie?",
+    time: "12m",
+    count: 0,
+  },
+  {
+    initials: "SD",
+    name: "Summer Drip",
+    preview: "You: lmaooo the shorts though",
+    time: "1h",
+    count: 0,
+  },
+  {
+    initials: "PK",
+    name: "Priya K.",
+    preview: "she liked your outfit post",
+    time: "3h",
+    count: 0,
+  },
+  {
+    initials: "VH",
+    name: "Vintage Hunters",
+    preview: "Alex: found a Helmut Lang jacket!",
+    time: "5h",
+    count: 7,
+  },
 ];
 
 async function init() {
@@ -60,7 +116,12 @@ function loadPersistedState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) {
-      state.saved = new Set(["arc-jacket", "levi-501", "nb-550", "vintage-scarf"]);
+      state.saved = new Set([
+        "arc-jacket",
+        "levi-501",
+        "nb-550",
+        "vintage-scarf",
+      ]);
       state.liked = new Set(["arc-jacket", "stone-knit"]);
       return;
     }
@@ -71,7 +132,12 @@ function loadPersistedState() {
     state.activeTab = parsed.activeTab ?? DEFAULT_TAB;
     state.activeFilter = parsed.activeFilter ?? DEFAULT_FILTER;
   } catch {
-    state.saved = new Set(["arc-jacket", "levi-501", "nb-550", "vintage-scarf"]);
+    state.saved = new Set([
+      "arc-jacket",
+      "levi-501",
+      "nb-550",
+      "vintage-scarf",
+    ]);
     state.liked = new Set(["arc-jacket", "stone-knit"]);
   }
 }
@@ -128,17 +194,17 @@ function handleClick(event) {
   const { action, id, category } = button.dataset;
 
   if (action === "toggle-like") {
-  toggleSet(state.liked, id);
-  persistState();
-  rerenderPreservingFeedScroll();
- }
+    toggleSet(state.liked, id);
+    persistState();
+    rerenderPreservingFeedScroll();
+  }
 
   if (action === "toggle-save") {
-  toggleSet(state.saved, id);
-  persistState();
-  rerenderPreservingFeedScroll();
-  showToast(state.saved.has(id) ? "Saved to closet" : "Removed from closet");
- }
+    toggleSet(state.saved, id);
+    persistState();
+    rerenderPreservingFeedScroll();
+    showToast(state.saved.has(id) ? "Saved to closet" : "Removed from closet");
+  }
 
   if (action === "open-detail") {
     state.activeDetailId = id;
@@ -205,7 +271,9 @@ function getFilteredSavedProducts() {
     return savedProducts;
   }
 
-  return savedProducts.filter((product) => product.category === state.activeFilter);
+  return savedProducts.filter(
+    (product) => product.category === state.activeFilter,
+  );
 }
 
 function render() {
@@ -285,7 +353,6 @@ function renderExploreScreen() {
       <div class="screen-head">
         <div class="eyebrow">Wardrobe</div>
         <h1 class="screen-title">A Feed Worth Wearing</h1>
-        <p class="screen-subtitle">Scroll the looks, save what lands, and open any product for the full affiliate card.</p>
       </div>
 
       <div class="stories">
@@ -309,10 +376,21 @@ function renderExploreScreen() {
 function renderClosetScreen() {
   const savedProducts = getSavedProducts();
   const filteredProducts = getFilteredSavedProducts();
-  const uniqueBrands = new Set(savedProducts.map((product) => product.brand)).size;
-  const totalValue = savedProducts.reduce((sum, product) => sum + product.price, 0);
+  const uniqueBrands = new Set(savedProducts.map((product) => product.brand))
+    .size;
+  const totalValue = savedProducts.reduce(
+    (sum, product) => sum + product.price,
+    0,
+  );
 
-  const chips = ["All", "Tops", "Bottoms", "Footwear", "Outerwear", "Accessories"]
+  const chips = [
+    "All",
+    "Tops",
+    "Bottoms",
+    "Footwear",
+    "Outerwear",
+    "Accessories",
+  ]
     .map(
       (category) => `
         <button class="chip ${state.activeFilter === category ? "active" : ""}" data-action="set-filter" data-category="${category}">
@@ -489,7 +567,9 @@ function renderProfileScreen() {
 }
 
 function renderModal() {
-  const product = state.activeDetailId ? getProductById(state.activeDetailId) : null;
+  const product = state.activeDetailId
+    ? getProductById(state.activeDetailId)
+    : null;
 
   if (!product) {
     modal.classList.add("hidden");
