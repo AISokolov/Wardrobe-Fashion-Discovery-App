@@ -27,6 +27,30 @@ const compactFormatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 1,
 });
 
+function renderFeedActionIcon(type) {
+  const icons = {
+    like: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 20.4 4.9 13.7a4.7 4.7 0 0 1 0-6.8 4.9 4.9 0 0 1 6.9 0L12 8.1l.2-.2a4.9 4.9 0 0 1 6.9 0 4.7 4.7 0 0 1 0 6.8L12 20.4Z" />
+      </svg>
+    `,
+    save: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M7 4.5h10a1.5 1.5 0 0 1 1.5 1.5V20l-6.5-3.7L5.5 20V6A1.5 1.5 0 0 1 7 4.5Z" />
+      </svg>
+    `,
+    share: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M14 5h5v5" />
+        <path d="M10 14 19 5" />
+        <path d="M19 13v4.5A1.5 1.5 0 0 1 17.5 19h-11A1.5 1.5 0 0 1 5 17.5v-11A1.5 1.5 0 0 1 6.5 5H11" />
+      </svg>
+    `,
+  };
+
+  return icons[type];
+}
+
 const stories = [
   {
     initials: "You",
@@ -303,15 +327,15 @@ function renderExploreScreen() {
           <div class="feed-image">
             <div class="feed-actions" aria-label="Post actions">
               <button class="action-button ${liked ? "active" : ""}" data-action="toggle-like" data-id="${product.id}" aria-label="Like ${product.name}">
-                <span class="action-icon">♡</span>
+                <span class="action-icon">${renderFeedActionIcon("like")}</span>
                 <span class="action-meta">${compactFormatter.format(likeCount)}</span>
               </button>
               <button class="action-button ${saved ? "active" : ""}" data-action="toggle-save" data-id="${product.id}" aria-label="Save ${product.name}">
-                <span class="action-icon">✦</span>
+                <span class="action-icon">${renderFeedActionIcon("save")}</span>
                 <span class="action-meta">${saved ? "Saved" : "Save"}</span>
               </button>
               <button class="action-button" data-action="share" data-id="${product.id}" aria-label="Share ${product.name}">
-                <span class="action-icon">↗</span>
+                <span class="action-icon">${renderFeedActionIcon("share")}</span>
                 <span class="action-meta">Share</span>
               </button>
             </div>
@@ -321,6 +345,7 @@ function renderExploreScreen() {
             </button>
 
             <div class="feed-meta">
+              <!--
               <div class="author-chip">
                 <div class="author-avatar">${product.author.initials}</div>
                 <div class="author-info">
@@ -328,6 +353,7 @@ function renderExploreScreen() {
                   <span>${product.author.rank}</span>
                 </div>
               </div>
+              -->
 
               <div>
                 <span class="product-brand">${product.brand}</span>
@@ -588,6 +614,17 @@ function renderModal() {
       <div class="detail-top">
         <img src="${product.image}" alt="${product.name}" />
         <button class="detail-close" data-action="close-detail" aria-label="Close detail">✕</button>
+        <div class="detail-actions detail-actions-top" aria-label="Post actions">
+          <button class="detail-button detail-icon-button ${liked ? "active" : ""}" data-action="toggle-like" data-id="${product.id}" aria-label="Like ${product.name}">
+            <span class="action-icon">${renderFeedActionIcon("like")}</span>
+          </button>
+          <button class="detail-button detail-icon-button ${saved ? "active" : ""}" data-action="toggle-save" data-id="${product.id}" aria-label="Save ${product.name}">
+            <span class="action-icon">${renderFeedActionIcon("save")}</span>
+          </button>
+          <button class="detail-button detail-icon-button" data-action="share" data-id="${product.id}" aria-label="Share ${product.name}">
+            <span class="action-icon">${renderFeedActionIcon("share")}</span>
+          </button>
+        </div>
       </div>
 
       <div class="detail-body">
@@ -596,14 +633,23 @@ function renderModal() {
         <div class="screen-subtitle">${product.collection} · Style ${product.styleCode}</div>
         <div class="detail-price">${priceFormatter.format(product.price)}</div>
 
-        <div class="screen-subtitle">Select size</div>
+        <div class="screen-subtitle">Available sizes</div>
         <div class="size-row">
           ${product.sizes
-            .map(
-              (size) => `
-                <span class="size-pill ${size === product.selectedSize ? "active" : ""}">${size}</span>
-              `,
-            )
+            .map((size) => {
+              const unavailable = product.unavailableSizes?.includes(size);
+              const classes = [
+                "size-pill",
+                size === product.selectedSize ? "active" : "",
+                unavailable ? "unavailable" : "",
+              ]
+                .filter(Boolean)
+                .join(" ");
+
+              return `
+                <span class="${classes}" aria-label="${size}${unavailable ? " unavailable" : ""}">${size}</span>
+              `;
+            })
             .join("")}
         </div>
 
@@ -638,17 +684,7 @@ function renderModal() {
           <div class="detail-list-row"><span>Why it fits</span><span>${product.description}</span></div>
         </div>
 
-        <div class="detail-actions">
-          <button class="detail-button ${liked ? "active" : ""}" data-action="toggle-like" data-id="${product.id}">
-            ${liked ? "Liked" : "Like"}
-          </button>
-          <button class="detail-button ${saved ? "active" : ""}" data-action="toggle-save" data-id="${product.id}">
-            ${saved ? "Saved" : "Save"}
-          </button>
-        </div>
-
-        <div class="detail-actions">
-          <button class="detail-button" data-action="share" data-id="${product.id}">Share</button>
+        <div class="detail-actions detail-actions-bottom">
           <button class="detail-button primary" data-action="shop" data-id="${product.id}">
             Shop via Affiliate Link
           </button>

@@ -19,6 +19,7 @@
     "shopUrl": "https://www.zalando.com/",
     "sizes": ["XS", "S", "M", "L", "XL"],
     "selectedSize": "M",
+    "unavailableSizes": ["XS", "XL"],
     "author": {
       "initials": "JM",
       "handle": "jake.m",
@@ -51,6 +52,7 @@
     "shopUrl": "https://www.levi.com/",
     "sizes": ["W30", "W32", "W34", "W36"],
     "selectedSize": "W32",
+    "unavailableSizes": ["W30", "W36"],
     "author": {
       "initials": "SR",
       "handle": "sofia.r",
@@ -83,6 +85,7 @@
     "shopUrl": "https://www.newbalance.com/",
     "sizes": ["40", "41", "42", "43", "44"],
     "selectedSize": "42",
+    "unavailableSizes": ["40", "44"],
     "author": {
       "initials": "VH",
       "handle": "vintghunt",
@@ -115,6 +118,7 @@
     "shopUrl": "https://www.etsy.com/",
     "sizes": ["OS"],
     "selectedSize": "OS",
+    "unavailableSizes": [],
     "author": {
       "initials": "PK",
       "handle": "priya.k",
@@ -125,6 +129,39 @@
       "note": "Marketplace seller",
       "rating": "4.9",
       "reviews": "318"
+    }
+  },
+  {
+    "id": "formal-shirt",
+    "brand": "Tailored Club",
+    "brandSlug": "TailoredClub",
+    "name": "Sky Formal Shirt",
+    "price": 118,
+    "category": "Tops",
+    "collection": "City Tailoring",
+    "styleCode": "SKY-FRM-217",
+    "material": "97% Cotton, 3% Elastane",
+    "shipping": "2-4 days",
+    "affiliateCut": "Earn €7",
+    "dropTag": "Formal",
+    "likes": 412,
+    "caption": "clean blue shirting and navy trousers still wins meetings and dinners",
+    "description": "A crisp light-blue button-up with a sharp collar and an easy tailored drape for office days, dinners, and formal events.",
+    "image": "./assets/formal-shirt.webp",
+    "shopUrl": "https://www.zalando.com/",
+    "sizes": ["38", "39", "40", "41", "42"],
+    "selectedSize": "40",
+    "unavailableSizes": ["38", "42"],
+    "author": {
+      "initials": "MC",
+      "handle": "minimal.city",
+      "rank": "tailoring spotter"
+    },
+    "seller": {
+      "name": "Zalando",
+      "note": "Curated formalwear edit",
+      "rating": "4.8",
+      "reviews": "1.2k"
     }
   },
   {
@@ -147,6 +184,7 @@
     "shopUrl": "https://www.weekday.com/",
     "sizes": ["S", "M", "L", "XL"],
     "selectedSize": "L",
+    "unavailableSizes": ["S", "XL"],
     "author": {
       "initials": "FC",
       "handle": "fitscouncil",
@@ -179,6 +217,7 @@
     "shopUrl": "https://www.ssense.com/",
     "sizes": ["S", "M", "L", "XL"],
     "selectedSize": "M",
+    "unavailableSizes": ["S", "XL"],
     "author": {
       "initials": "JM",
       "handle": "jake.m",
