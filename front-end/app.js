@@ -7,6 +7,7 @@ const state = {
   activeTab: DEFAULT_TAB,
   activeFilter: DEFAULT_FILTER,
   activeDetailId: null,
+  activeThreadId: null,
   saved: new Set(),
   liked: new Set(),
   toastTimer: null,
@@ -81,13 +82,16 @@ const stories = [
 
 const messages = [
   {
+    id: "fits-council",
     initials: "FC",
     name: "The Fits Council",
     preview: "Mia: omg that fit pic tho",
     time: "2m",
     count: 3,
+    clickable: true,
   },
   {
+    id: "sofia",
     initials: "SR",
     name: "Sofia R.",
     preview: "that jacket is EVERYTHING",
@@ -95,6 +99,7 @@ const messages = [
     count: 1,
   },
   {
+    id: "jake",
     initials: "JM",
     name: "Jake M.",
     preview: "can I borrow the grey hoodie?",
@@ -102,6 +107,7 @@ const messages = [
     count: 0,
   },
   {
+    id: "summer-drip",
     initials: "SD",
     name: "Summer Drip",
     preview: "You: lmaooo the shorts though",
@@ -109,6 +115,7 @@ const messages = [
     count: 0,
   },
   {
+    id: "priya",
     initials: "PK",
     name: "Priya K.",
     preview: "she liked your outfit post",
@@ -116,6 +123,7 @@ const messages = [
     count: 0,
   },
   {
+    id: "vintage-hunters",
     initials: "VH",
     name: "Vintage Hunters",
     preview: "Alex: found a Helmut Lang jacket!",
@@ -123,6 +131,47 @@ const messages = [
     count: 7,
   },
 ];
+
+const inboxThreads = {
+  "fits-council": {
+    title: "The Fits Council",
+    subtitle: "Mia, Leo, Sana",
+    messages: [
+      {
+        initials: "MI",
+        sender: "Mia",
+        text: "Friday dinner fit check. Dropping the shirt option first.",
+      },
+      {
+        initials: "MI",
+        sender: "Mia",
+        productId: "formal-shirt",
+        note: "This with navy trousers is clean.",
+        reactions: ["Sana: save this", "Leo: very sharp"],
+      },
+      {
+        initials: "YO",
+        sender: "You",
+        own: true,
+        text: "Yeah this is exactly the lane I want.",
+      },
+      {
+        initials: "LE",
+        sender: "Leo",
+        productId: "nb-550",
+        note: "Swap in these if you want to relax it a bit.",
+        reactions: ["You: easy win", "Mia: good balance"],
+      },
+      {
+        initials: "SA",
+        sender: "Sana",
+        productId: "stone-knit",
+        note: "And keep this on standby if it gets colder later.",
+        reactions: ["You: texture is crazy"],
+      },
+    ],
+  },
+};
 
 async function init() {
   await loadProducts();
@@ -239,6 +288,16 @@ function handleClick(event) {
     closeDetail();
   }
 
+  if (action === "open-thread") {
+    state.activeThreadId = id;
+    render();
+  }
+
+  if (action === "close-thread") {
+    state.activeThreadId = null;
+    render();
+  }
+
   if (action === "shop") {
     const product = getProductById(id);
     if (product) {
@@ -263,6 +322,12 @@ function handleClick(event) {
 function handleKeydown(event) {
   if (event.key === "Escape" && state.activeDetailId) {
     closeDetail();
+    return;
+  }
+
+  if (event.key === "Escape" && state.activeThreadId) {
+    state.activeThreadId = null;
+    render();
   }
 }
 
@@ -404,7 +469,7 @@ function renderClosetScreen() {
   const filteredProducts = getFilteredSavedProducts();
   const uniqueBrands = new Set(savedProducts.map((product) => product.brand))
     .size;
-  const totalValue = savedProducts.reduce(
+  const savedValue = savedProducts.reduce(
     (sum, product) => sum + product.price,
     0,
   );
@@ -468,8 +533,8 @@ function renderClosetScreen() {
           <span class="stat-value">${uniqueBrands}</span>
           <span class="stat-label">Brands</span>
         </div>
-        <div class="stat">
-          <span class="stat-value">${priceFormatter.format(totalValue)}</span>
+        <div class="stat stat-wide">
+          <span class="stat-value">${priceFormatter.format(savedValue)}</span>
           <span class="stat-label">Value</span>
         </div>
       </div>
@@ -479,9 +544,6 @@ function renderClosetScreen() {
       <div class="screen-scroll">
         <div class="closet-grid">
           ${closetItems}
-          <div class="add-card">
-            <span><strong>+</strong>Add item</span>
-          </div>
         </div>
       </div>
     </section>
@@ -489,6 +551,10 @@ function renderClosetScreen() {
 }
 
 function renderInboxScreen() {
+  if (state.activeThreadId) {
+    return renderInboxThread();
+  }
+
   return `
     <section class="screen ${state.activeTab === "inbox" ? "active" : ""}">
       <div class="screen-head">
@@ -509,7 +575,7 @@ function renderInboxScreen() {
           ${messages
             .map(
               (message) => `
-                <div class="message-row">
+                <button class="message-row ${message.clickable ? "clickable" : ""}" ${message.clickable ? `data-action="open-thread" data-id="${message.id}"` : ""}>
                   <div class="message-avatar">${message.initials}</div>
                   <div>
                     <strong class="message-name">${message.name}</strong>
@@ -519,13 +585,89 @@ function renderInboxScreen() {
                     <div class="message-time">${message.time}</div>
                     ${message.count ? `<div class="message-count">${message.count}</div>` : `<div class="message-meta">·</div>`}
                   </div>
-                </div>
+                </button>
               `,
             )
             .join("")}
         </div>
       </div>
     </section>
+  `;
+}
+
+function renderInboxThread() {
+  const thread = inboxThreads[state.activeThreadId];
+
+  if (!thread) {
+    state.activeThreadId = null;
+    return renderInboxScreen();
+  }
+
+  return `
+    <section class="screen ${state.activeTab === "inbox" ? "active" : ""}">
+      <div class="screen-head inbox-thread-head">
+        <button class="thread-back" data-action="close-thread" aria-label="Back to inbox">‹</button>
+        <div>
+          <div class="eyebrow">Inbox</div>
+          <h1 class="screen-title">${thread.title}</h1>
+          <div class="screen-subtitle">${thread.subtitle}</div>
+        </div>
+      </div>
+
+      <div class="screen-scroll thread-scroll">
+        <div class="thread-messages">
+          ${thread.messages
+            .map((message) => renderThreadMessage(message))
+            .join("")}
+        </div>
+
+        <div class="thread-composer">
+          <span>Message The Fits Council...</span>
+          <button class="cta-button primary">Send</button>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderThreadMessage(message) {
+  const product = message.productId ? getProductById(message.productId) : null;
+
+  return `
+    <div class="thread-row ${message.own ? "own" : ""}">
+      <div class="thread-avatar">${message.initials}</div>
+      <div class="thread-stack">
+        <div class="thread-bubble ${message.productId ? "thread-bubble-share" : ""}">
+          ${message.text ? `<p>${message.text}</p>` : ""}
+          ${
+            product
+              ? `
+                <button class="thread-product-card" data-action="open-detail" data-id="${product.id}">
+                  <img src="${product.image}" alt="${product.name}" />
+                  <div class="thread-product-copy">
+                    <span class="product-brand">${product.brand}</span>
+                    <strong>${product.name}</strong>
+                    <span class="thread-product-price">${priceFormatter.format(product.price)}</span>
+                    ${message.note ? `<p>${message.note}</p>` : ""}
+                  </div>
+                </button>
+              `
+              : ""
+          }
+        </div>
+        ${
+          message.reactions?.length
+            ? `
+              <div class="thread-reactions">
+                ${message.reactions
+                  .map((reaction) => `<span class="thread-reaction">${reaction}</span>`)
+                  .join("")}
+              </div>
+            `
+            : ""
+        }
+      </div>
+    </div>
   `;
 }
 
