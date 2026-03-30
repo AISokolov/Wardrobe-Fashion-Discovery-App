@@ -7,7 +7,7 @@ This project is a frontend application built using React.
 
 ## ⚙️ Tech Stack
 - React
-- JavaScript (or TypeScript if you use it)
+- JavaScript
 
 ---
 
