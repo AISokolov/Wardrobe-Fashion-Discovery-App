@@ -1,0 +1,325 @@
+[
+  {
+    "id": "arc-jacket",
+    "brand": "Stone Island",
+    "brandSlug": "StoneIsland",
+    "name": "Arcteryx Jacket",
+    "price": 320,
+    "category": "Outerwear",
+    "collection": "AW 2024 Collection",
+    "styleCode": "4100067S0069",
+    "material": "100% Nylon",
+    "shipping": "3-5 days",
+    "affiliateCut": "Earn EUR 19",
+    "dropTag": "AW2024",
+    "likes": 2400,
+    "caption": "season's best drop no cap",
+    "description": "Technical shell energy with a strong alpine silhouette and resale-proof everyday wearability.",
+    "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+    "shopUrl": "https://www.zalando.com/",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "selectedSize": "M",
+    "unavailableSizes": [
+      "XS",
+      "XL"
+    ],
+    "author": {
+      "initials": "JM",
+      "handle": "jake.m",
+      "rank": "fit curator"
+    },
+    "seller": {
+      "name": "Zalando",
+      "note": "Official Stone Island stockist",
+      "rating": "4.9",
+      "reviews": "2.1k"
+    }
+  },
+  {
+    "id": "levi-501",
+    "brand": "Levi's",
+    "brandSlug": "Levis",
+    "name": "Levi's 501",
+    "price": 85,
+    "category": "Bottoms",
+    "collection": "Vintage Straight",
+    "styleCode": "00501-3522",
+    "material": "100% Cotton",
+    "shipping": "2-4 days",
+    "affiliateCut": "Earn EUR 6",
+    "dropTag": "Vintage",
+    "likes": 186,
+    "caption": "daily driver denim that still looks intentional",
+    "description": "A straight-leg staple with the right wash for oversized knitwear, loafers, and beat-up sneakers.",
+    "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80",
+    "shopUrl": "https://www.levi.com/",
+    "sizes": [
+      "W30",
+      "W32",
+      "W34",
+      "W36"
+    ],
+    "selectedSize": "W32",
+    "unavailableSizes": [
+      "W30",
+      "W36"
+    ],
+    "author": {
+      "initials": "SR",
+      "handle": "sofia.r",
+      "rank": "denim scout"
+    },
+    "seller": {
+      "name": "Levi's",
+      "note": "Official webshop",
+      "rating": "4.8",
+      "reviews": "6.4k"
+    }
+  },
+  {
+    "id": "nb-550",
+    "brand": "New Balance",
+    "brandSlug": "NewBalance",
+    "name": "New Balance 550",
+    "price": 130,
+    "category": "Footwear",
+    "collection": "Court Archive",
+    "styleCode": "BB550-GN2",
+    "material": "Leather & Mesh",
+    "shipping": "1-3 days",
+    "affiliateCut": "Earn EUR 8",
+    "dropTag": "RetroCourt",
+    "likes": 980,
+    "caption": "green hit on white leather always works",
+    "description": "An easy gateway sneaker for a feed built around varsity palettes and sportswear references.",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
+    "shopUrl": "https://www.newbalance.com/",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "selectedSize": "42",
+    "unavailableSizes": [
+      "40",
+      "44"
+    ],
+    "author": {
+      "initials": "VH",
+      "handle": "vintghunt",
+      "rank": "sneaker archivist"
+    },
+    "seller": {
+      "name": "New Balance",
+      "note": "Official brand store",
+      "rating": "4.7",
+      "reviews": "4.8k"
+    }
+  },
+  {
+    "id": "vintage-scarf",
+    "brand": "Hermes",
+    "brandSlug": "Hermes",
+    "name": "Vintage Scarf",
+    "price": 22,
+    "category": "Accessories",
+    "collection": "Archive Silk",
+    "styleCode": "VNTG-SILK-09",
+    "material": "Pure Silk",
+    "shipping": "5-7 days",
+    "affiliateCut": "Earn EUR 3",
+    "dropTag": "Archive",
+    "likes": 132,
+    "caption": "cheap vintage flex, expensive styling outcome",
+    "description": "The quickest way to break up monochrome outfits and push a look toward fashion rather than basics.",
+    "image": "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&w=900&q=80",
+    "shopUrl": "https://www.etsy.com/",
+    "sizes": [
+      "OS"
+    ],
+    "selectedSize": "OS",
+    "unavailableSizes": [],
+    "author": {
+      "initials": "PK",
+      "handle": "priya.k",
+      "rank": "archive hunter"
+    },
+    "seller": {
+      "name": "Vintage Curator",
+      "note": "Marketplace seller",
+      "rating": "4.9",
+      "reviews": "318"
+    }
+  },
+  {
+    "id": "formal-shirt",
+    "brand": "Tailored Club",
+    "brandSlug": "TailoredClub",
+    "name": "Sky Formal Shirt",
+    "price": 118,
+    "category": "Tops",
+    "collection": "City Tailoring",
+    "styleCode": "SKY-FRM-217",
+    "material": "97% Cotton, 3% Elastane",
+    "shipping": "2-4 days",
+    "affiliateCut": "Earn EUR 7",
+    "dropTag": "Formal",
+    "likes": 412,
+    "caption": "clean blue shirting and navy trousers still wins meetings and dinners",
+    "description": "A crisp light-blue button-up with a sharp collar and an easy tailored drape for office days, dinners, and formal events.",
+    "image": "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=900&q=80",
+    "shopUrl": "https://www.zalando.com/",
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42"
+    ],
+    "selectedSize": "40",
+    "unavailableSizes": [
+      "38",
+      "42"
+    ],
+    "author": {
+      "initials": "MC",
+      "handle": "minimal.city",
+      "rank": "tailoring spotter"
+    },
+    "seller": {
+      "name": "Zalando",
+      "note": "Curated formalwear edit",
+      "rating": "4.8",
+      "reviews": "1.2k"
+    }
+  },
+  {
+    "id": "weekday-tee",
+    "brand": "Weekday",
+    "brandSlug": "Weekday",
+    "name": "Oversized Tee",
+    "price": 28,
+    "category": "Tops",
+    "collection": "Studio Essentials",
+    "styleCode": "OVRSZD-THU",
+    "material": "Heavyweight Jersey",
+    "shipping": "2-5 days",
+    "affiliateCut": "Earn EUR 2",
+    "dropTag": "Core",
+    "likes": 73,
+    "caption": "one strong tee and good denim solves most outfits",
+    "description": "Boxy cut, faded black tone, and just enough graphic treatment to carry a simple fit.",
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+    "shopUrl": "https://www.weekday.com/",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "selectedSize": "L",
+    "unavailableSizes": [
+      "S",
+      "XL"
+    ],
+    "author": {
+      "initials": "FC",
+      "handle": "fitscouncil",
+      "rank": "community pick"
+    },
+    "seller": {
+      "name": "Weekday",
+      "note": "Official webshop",
+      "rating": "4.5",
+      "reviews": "1.8k"
+    }
+  },
+  {
+    "id": "stone-knit",
+    "brand": "Stone Island",
+    "brandSlug": "StoneIsland",
+    "name": "Ghost Knit Hoodie",
+    "price": 192,
+    "category": "Tops",
+    "collection": "Ghost Program",
+    "styleCode": "GHOST-221A",
+    "material": "Brushed Cotton Blend",
+    "shipping": "3-4 days",
+    "affiliateCut": "Earn EUR 12",
+    "dropTag": "Ghost",
+    "likes": 189,
+    "caption": "quiet branding, expensive texture, zero effort required",
+    "description": "Muted utilitarian knitwear that bridges casual and collector-coded styling in one piece.",
+    "image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80",
+    "shopUrl": "https://www.ssense.com/",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "selectedSize": "M",
+    "unavailableSizes": [
+      "S",
+      "XL"
+    ],
+    "author": {
+      "initials": "JM",
+      "handle": "jake.m",
+      "rank": "fit curator"
+    },
+    "seller": {
+      "name": "SSENSE",
+      "note": "Authorized Stone Island retailer",
+      "rating": "4.8",
+      "reviews": "9.2k"
+    }
+  },
+  {
+    "id": "dries-bomber",
+    "brand": "Dries Van Noten",
+    "brandSlug": "DriesVanNoten",
+    "name": "Printed Bomber",
+    "price": 410,
+    "category": "Outerwear",
+    "collection": "Runway Edit",
+    "styleCode": "DVN-PRNT-88",
+    "material": "Viscose Blend",
+    "shipping": "4-6 days",
+    "affiliateCut": "Earn EUR 24",
+    "dropTag": "Runway",
+    "likes": 540,
+    "caption": "the kind of statement layer that does all the work for you",
+    "description": "A rich patterned bomber that turns simple black basics into a full look instantly.",
+    "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+    "shopUrl": "https://www.ssense.com/",
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "selectedSize": "M",
+    "unavailableSizes": [
+      "S"
+    ],
+    "author": {
+      "initials": "VH",
+      "handle": "vintghunt",
+      "rank": "archive hunter"
+    },
+    "seller": {
+      "name": "SSENSE",
+      "note": "Luxury designer retailer",
+      "rating": "4.8",
+      "reviews": "9.2k"
+    }
+  }
+]
