@@ -1,0 +1,54 @@
+.closet-card {
+  text-align: left;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(26, 22, 19, 0.98), rgba(18, 16, 16, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 140ms ease;
+}
+
+.closet-card:hover {
+  transform: translateY(-1px);
+}
+
+.closet-card-frame {
+  position: relative;
+}
+
+.closet-image {
+  aspect-ratio: 0.95;
+  background: #0c0c0c;
+}
+
+.closet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.save-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.72);
+}
+
+.closet-copy {
+  padding: 10px 12px 12px;
+}
+
+.closet-copy strong {
+  display: block;
+  font-weight: 700;
+}
+
+.closet-meta {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.3;
+}
