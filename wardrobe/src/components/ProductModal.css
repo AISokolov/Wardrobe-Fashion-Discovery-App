@@ -1,0 +1,219 @@
+.detail-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(16px);
+}
+
+.detail-card {
+  width: min(100%, 440px);
+  max-height: min(90dvh, 920px);
+  overflow-y: auto;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #0f0f0f 0%, #141110 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.detail-top {
+  position: relative;
+  aspect-ratio: 0.9;
+  overflow: hidden;
+}
+
+.detail-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 10, 10, 0.58);
+  backdrop-filter: blur(8px);
+}
+
+.detail-body {
+  padding: 18px 20px 20px;
+}
+
+.detail-price {
+  margin: 4px 0 12px;
+  font-size: 2.25rem;
+  letter-spacing: -0.05em;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0 16px;
+}
+
+.mini-card,
+.seller-card {
+  padding: 12px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(28, 25, 21, 0.9), rgba(20, 18, 16, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.seller-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.verified-pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--good);
+  background: rgba(169, 212, 122, 0.12);
+  border: 1px solid rgba(169, 212, 122, 0.28);
+}
+
+.size-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0 18px;
+}
+
+.size-pill {
+  position: relative;
+  min-width: 48px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-align: center;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 140ms ease, color 140ms ease, border-color 140ms ease, transform 140ms ease;
+}
+
+.size-pill:hover:not(.unavailable) {
+  transform: translateY(-1px);
+}
+
+.size-pill.active {
+  color: #1b140f;
+  background: var(--accent);
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.size-pill.unavailable {
+  color: rgba(244, 239, 231, 0.3);
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.05);
+  cursor: not-allowed;
+}
+
+.size-pill.unavailable::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -18%;
+  width: 136%;
+  height: 1.5px;
+  background: rgba(229, 178, 114, 0.75);
+  transform: rotate(-28deg);
+}
+
+.detail-list {
+  display: grid;
+  gap: 10px;
+  color: var(--muted);
+}
+
+.detail-list-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-actions-top {
+  position: absolute;
+  top: 72px;
+  right: 16px;
+  z-index: 2;
+  flex-direction: column;
+}
+
+.detail-actions-bottom {
+  margin-top: 22px;
+}
+
+.detail-button {
+  flex: 1;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detail-icon-button {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 10, 10, 0.58);
+  backdrop-filter: blur(10px);
+}
+
+.detail-icon-button.active {
+  background: rgba(229, 178, 114, 0.18);
+  border-color: rgba(229, 178, 114, 0.36);
+}
+
+.action-icon {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.detail-icon-button.active .action-icon svg {
+  fill: currentColor;
+}
+
+.detail-button.primary {
+  width: 100%;
+  background: linear-gradient(135deg, #e0a867, #d8ca67);
+  color: #16110d;
+  font-weight: 700;
+}

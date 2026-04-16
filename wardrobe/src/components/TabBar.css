@@ -1,0 +1,68 @@
+.tab-bar {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  height: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px 12px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(180deg, rgba(12, 12, 12, 0.88), rgba(10, 10, 10, 0.98));
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+}
+
+.tab-button {
+  display: grid;
+  place-items: center;
+  gap: 4px;
+  padding: 4px 0;
+  color: rgba(244, 239, 231, 0.44);
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.tab-button:hover {
+  transform: translateY(-1px);
+}
+
+.tab-button.active {
+  color: var(--accent);
+}
+
+.tab-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tab-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tab-button.active .tab-icon {
+  background: rgba(229, 178, 114, 0.18);
+}
+
+.tab-label {
+  font-size: 0.55rem;
+}
+
+@media (max-width: 640px) {
+  .tab-bar {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+}
