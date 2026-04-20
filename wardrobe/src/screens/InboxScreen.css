@@ -1,0 +1,77 @@
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 22px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(20, 20, 20, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+}
+
+.messages {
+  padding: 12px 22px 24px;
+}
+
+.inbox-thread-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.thread-back {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.thread-scroll {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.thread-messages {
+  padding: 8px 18px 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.thread-composer {
+  position: sticky;
+  bottom: 0;
+  margin: 0 18px 18px;
+  padding: 10px;
+  border-radius: 18px;
+  background: rgba(17, 17, 17, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.thread-composer-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.thread-composer-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  outline: none;
+}
+
+.thread-composer-input::placeholder {
+  color: var(--muted);
+}

@@ -1,0 +1,118 @@
+.profile-hero {
+  margin: 16px 22px 0;
+  padding: 22px;
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(48, 35, 16, 0.7), rgba(23, 20, 18, 0.96)),
+    radial-gradient(circle at top, rgba(229, 178, 114, 0.14), transparent 50%);
+  border: 1px solid rgba(229, 178, 114, 0.16);
+}
+
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 3px solid var(--accent);
+  background: radial-gradient(circle, rgba(229, 178, 114, 0.25), rgba(32, 24, 18, 0.96));
+  font-size: 2rem;
+}
+
+.profile-name,
+.profile-handle,
+.profile-tagline {
+  text-align: center;
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.profile-handle,
+.profile-tagline {
+  color: var(--muted);
+}
+
+.panel-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(10, 10, 10, 0.24);
+}
+
+.panel-strip .stat {
+  padding: 12px 8px;
+}
+
+.panel-strip .stat-value.good {
+  color: var(--good);
+}
+
+.cta-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.profile-tabs {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px 22px 10px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.profile-tabs .active {
+  color: var(--accent-strong);
+  position: relative;
+}
+
+.profile-tabs .active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 14px 22px 24px;
+}
+
+.profile-tile {
+  position: relative;
+  aspect-ratio: 0.82;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(26, 22, 19, 0.98), rgba(18, 16, 16, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.profile-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tile-like {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.56);
+  font-size: 0.78rem;
+}

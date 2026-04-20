@@ -1,0 +1,91 @@
+.share-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(12px);
+}
+
+.share-sheet {
+  width: min(100%, 460px);
+  border-radius: 28px;
+  padding: 14px 16px 16px;
+  background: linear-gradient(180deg, rgba(22, 19, 17, 0.98), rgba(13, 12, 12, 0.99));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.share-sheet-handle {
+  width: 56px;
+  height: 5px;
+  margin: 0 auto 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.share-sheet-copy {
+  padding: 0 6px 12px;
+}
+
+.share-sheet-title {
+  margin: 4px 0 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+}
+
+.share-sheet-subtitle {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.share-sheet-list {
+  display: grid;
+  gap: 10px;
+}
+
+.share-target {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  text-align: left;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.share-target-avatar {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--accent-strong);
+  font-weight: 700;
+  background: rgba(229, 178, 114, 0.14);
+  border: 1px solid rgba(229, 178, 114, 0.22);
+}
+
+.share-target-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.share-target-copy span {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.share-target-cta {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(229, 178, 114, 0.16);
+  color: var(--accent-strong);
+  font-weight: 700;
+}
