@@ -20,6 +20,34 @@ export const stories = [
     color: 'linear-gradient(135deg,#163a2c,#101916)',
     productId: 'nb-550',
   },
+  {
+    id: 'emma',
+    initials: 'ES',
+    name: 'emma.s',
+    color: 'linear-gradient(135deg,#3a1c71,#d76d77)',
+    productId: 'air-max',
+  },
+  {
+    id: 'liam',
+    initials: 'LW',
+    name: 'liam.w',
+    color: 'linear-gradient(135deg,#ff7e5f,#feb47b)',
+    productId: 'ultra-boost',
+  },
+  {
+    id: 'olivia',
+    initials: 'OR',
+    name: 'olivia.r',
+    color: 'linear-gradient(135deg,#6a11cb,#2575fc)',
+    productId: 'gel-kayano',
+  },
+  {
+    id: 'noah',
+    initials: 'NN',
+    name: 'noah.n',
+    color: 'linear-gradient(135deg,#ffafbd,#ffc3a0)',
+    productId: 'classic-leather',
+  },
 ];
 
 export const closetCategories = [
