@@ -18,11 +18,23 @@ function ModalGlyph({ kind }) {
     );
   }
 
+  if (kind === 'shop') {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M14 5h5v5" />
+        <path d="M10 14 19 5" />
+        <path d="M19 13v4.5A1.5 1.5 0 0 1 17.5 19h-11A1.5 1.5 0 0 1 5 17.5v-11A1.5 1.5 0 0 1 6.5 5H11" />
+      </svg>
+    );
+  }
+
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M14 5h5v5" />
-      <path d="M10 14 19 5" />
-      <path d="M19 13v4.5A1.5 1.5 0 0 1 17.5 19h-11A1.5 1.5 0 0 1 5 17.5v-11A1.5 1.5 0 0 1 6.5 5H11" />
+      <circle cx="6" cy="12" r="2.4" />
+      <circle cx="18" cy="6" r="2.4" />
+      <circle cx="18" cy="18" r="2.4" />
+      <path d="M8.1 11 15.9 7.1" />
+      <path d="M8.1 13 15.9 16.9" />
     </svg>
   );
 }
@@ -93,6 +105,16 @@ function ProductModal({
             >
               <span className="action-icon">
                 <ModalGlyph kind="share" />
+              </span>
+            </button>
+            <button
+              type="button"
+              className="detail-button detail-icon-button"
+              onClick={onShop}
+              aria-label={`Shop ${product.name} via affiliate link`}
+            >
+              <span className="action-icon">
+                <ModalGlyph kind="shop" />
               </span>
             </button>
           </div>
