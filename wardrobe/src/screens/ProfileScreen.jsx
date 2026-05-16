@@ -9,7 +9,13 @@ function ProfileScreen({ profile, products, onOpenProduct }) {
 
       <div className="profile-body">
         <section className="profile-hero">
-          <div className="profile-avatar">{profile.initial}</div>
+          <div className="profile-avatar">
+            {profile.image ? (
+              <img src={profile.image} alt={profile.username} />
+            ) : (
+              profile.initial
+            )}
+          </div>
           <h2 className="profile-name">{profile.username}</h2>
           <div className="profile-handle">{profile.handle}</div>
           <div className="profile-tagline">{profile.tagline}</div>

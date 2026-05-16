@@ -15,7 +15,8 @@
     "likes": 2400,
     "caption": "season's best drop no cap",
     "description": "Technical shell energy with a strong alpine silhouette and resale-proof everyday wearability.",
-    "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+    "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=80",
+    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
     "shopUrl": "https://www.zalando.com/",
     "sizes": [
       "XS",
@@ -99,6 +100,7 @@
     "caption": "green hit on white leather always works",
     "description": "An easy gateway sneaker for a feed built around varsity palettes and sportswear references.",
     "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
+    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
     "shopUrl": "https://www.newbalance.com/",
     "sizes": [
       "40",
@@ -300,6 +302,7 @@
     "caption": "the kind of statement layer that does all the work for you",
     "description": "A rich patterned bomber that turns simple black basics into a full look instantly.",
     "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
     "shopUrl": "https://www.ssense.com/",
     "sizes": [
       "S",
@@ -320,6 +323,197 @@
       "note": "Luxury designer retailer",
       "rating": "4.8",
       "reviews": "9.2k"
+    }
+  },
+  {
+    "id": "adidas-samba",
+    "brand": "Adidas",
+    "brandSlug": "Adidas",
+    "name": "Samba OG",
+    "price": 110,
+    "category": "Footwear",
+    "collection": "Originals",
+    "styleCode": "B75806",
+    "material": "Leather & Suede",
+    "shipping": "1-3 days",
+    "affiliateCut": "Earn EUR 7",
+    "dropTag": "Terrace",
+    "likes": 1820,
+    "caption": "samba era keeps eating, can't stop",
+    "description": "Low-profile terrace silhouette in black leather with the gum sole that makes every outfit click.",
+    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=900&q=80",
+    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "shopUrl": "https://www.adidas.com/",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "selectedSize": "42",
+    "unavailableSizes": [
+      "40",
+      "45"
+    ],
+    "author": {
+      "initials": "LW",
+      "handle": "liam.w",
+      "rank": "terrace head"
+    },
+    "seller": {
+      "name": "Adidas",
+      "note": "Official brand store",
+      "rating": "4.8",
+      "reviews": "12.4k"
+    }
+  },
+  {
+    "id": "carhartt-beanie",
+    "brand": "Carhartt WIP",
+    "brandSlug": "CarharttWIP",
+    "name": "Acrylic Watch Hat",
+    "price": 32,
+    "category": "Accessories",
+    "collection": "Core Knit",
+    "styleCode": "I020222-08X",
+    "material": "100% Acrylic",
+    "shipping": "2-4 days",
+    "affiliateCut": "Earn EUR 2",
+    "dropTag": "Core",
+    "likes": 246,
+    "caption": "the beanie that finishes every winter fit",
+    "description": "Tight-knit watch cap in faded olive with the small woven label, instantly recognisable, instantly easy.",
+    "image": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=900&q=80",
+    "shopUrl": "https://www.carhartt-wip.com/",
+    "sizes": [
+      "OS"
+    ],
+    "selectedSize": "OS",
+    "unavailableSizes": [],
+    "author": {
+      "initials": "NN",
+      "handle": "noah.n",
+      "rank": "core picks"
+    },
+    "seller": {
+      "name": "Carhartt WIP",
+      "note": "Official webshop",
+      "rating": "4.7",
+      "reviews": "5.6k"
+    }
+  },
+  {
+    "id": "acne-scarf",
+    "brand": "Acne Studios",
+    "brandSlug": "AcneStudios",
+    "name": "Oversized Wool Scarf",
+    "price": 280,
+    "category": "Accessories",
+    "collection": "Signature",
+    "styleCode": "CA0102-AD0",
+    "material": "Pure Wool",
+    "shipping": "3-5 days",
+    "affiliateCut": "Earn EUR 16",
+    "dropTag": "Signature",
+    "likes": 612,
+    "caption": "long scarf, short caption",
+    "description": "Soft brushed wool with fringed ends, large enough to wrap twice and still hit the knee.",
+    "image": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?auto=format&fit=crop&w=900&q=80",
+    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    "shopUrl": "https://www.acnestudios.com/",
+    "sizes": [
+      "OS"
+    ],
+    "selectedSize": "OS",
+    "unavailableSizes": [],
+    "author": {
+      "initials": "OR",
+      "handle": "olivia.r",
+      "rank": "luxe stylist"
+    },
+    "seller": {
+      "name": "Acne Studios",
+      "note": "Official boutique",
+      "rating": "4.8",
+      "reviews": "3.1k"
+    }
+  },
+  {
+    "id": "uniqlo-heattech",
+    "brand": "Uniqlo",
+    "brandSlug": "Uniqlo",
+    "name": "HEATTECH Mock Neck",
+    "price": 25,
+    "category": "Tops",
+    "collection": "Lifewear",
+    "styleCode": "HTH-MOCK-09",
+    "material": "Polyester / Rayon Blend",
+    "shipping": "2-4 days",
+    "affiliateCut": "Earn EUR 1",
+    "dropTag": "Lifewear",
+    "likes": 198,
+    "caption": "secret weapon under every winter look",
+    "description": "Slim mock neck base layer that disappears under shirts, knits and jackets while keeping the warmth dialled in.",
+    "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=900&q=80",
+    "shopUrl": "https://www.uniqlo.com/",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "selectedSize": "M",
+    "unavailableSizes": [
+      "S"
+    ],
+    "author": {
+      "initials": "ES",
+      "handle": "emma.s",
+      "rank": "layering nerd"
+    },
+    "seller": {
+      "name": "Uniqlo",
+      "note": "Official webshop",
+      "rating": "4.7",
+      "reviews": "8.9k"
+    }
+  },
+  {
+    "id": "loewe-tote",
+    "brand": "Loewe",
+    "brandSlug": "Loewe",
+    "name": "Puzzle Mini Tote",
+    "price": 1850,
+    "category": "Accessories",
+    "collection": "Puzzle",
+    "styleCode": "PZL-MINI-04",
+    "material": "Calfskin Leather",
+    "shipping": "5-7 days",
+    "affiliateCut": "Earn EUR 92",
+    "dropTag": "Icon",
+    "likes": 1340,
+    "caption": "geometry as a status object",
+    "description": "Compact geometric tote with hand-finished calfskin panels, the kind of bag that anchors an entire outfit.",
+    "image": "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=900&q=80",
+    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "shopUrl": "https://www.loewe.com/",
+    "sizes": [
+      "OS"
+    ],
+    "selectedSize": "OS",
+    "unavailableSizes": [],
+    "author": {
+      "initials": "SR",
+      "handle": "sofia.r",
+      "rank": "luxury scout"
+    },
+    "seller": {
+      "name": "Loewe",
+      "note": "Official boutique",
+      "rating": "4.9",
+      "reviews": "1.4k"
     }
   }
 ]

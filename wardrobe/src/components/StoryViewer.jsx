@@ -30,7 +30,11 @@ function StoryViewer({ isOpen, stories, activeIndex, onClose, onNext, onPrevious
         <div className="story-viewer-head">
           <div className="story-viewer-user">
             <div className="story-avatar story-avatar-large" style={{ background: story.color }}>
-              {story.initials}
+              {story.image ? (
+                <img src={story.image} alt={story.name} />
+              ) : (
+                story.initials
+              )}
             </div>
             <div>
               <strong>{story.name}</strong>

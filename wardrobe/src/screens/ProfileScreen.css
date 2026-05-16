@@ -18,6 +18,14 @@
   border: 3px solid var(--accent);
   background: radial-gradient(circle, rgba(229, 178, 114, 0.25), rgba(32, 24, 18, 0.96));
   font-size: 2rem;
+  overflow: hidden;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 999px;
 }
 
 .profile-name,

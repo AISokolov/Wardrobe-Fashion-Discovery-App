@@ -6,7 +6,13 @@ function ThreadMessage({ message, onOpenProduct }) {
 
   return (
     <div className={`thread-row ${message.own ? 'own' : ''}`}>
-      <div className="thread-avatar">{message.initials}</div>
+      <div className="thread-avatar">
+        {message.image ? (
+          <img src={message.image} alt={message.sender} />
+        ) : (
+          message.initials
+        )}
+      </div>
       <div className="thread-stack">
         <div className={`thread-bubble ${product ? 'thread-bubble-share' : ''}`}>
           {message.text ? <p>{message.text}</p> : null}

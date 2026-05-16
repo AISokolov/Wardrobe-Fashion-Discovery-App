@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import './ProductCard.css';
 import { compactFormatter, priceFormatter } from '../utils/formatters';
 
@@ -42,8 +43,31 @@ function ActionButton({ active = false, meta, onClick, children, ariaLabel }) {
 }
 
 function ProductCard({ product, liked, saved, onLike, onSave, onShare, onOpen }) {
+  const videoRef = useRef(null);
+
+  const handleEnter = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.currentTime = 0;
+    const result = video.play();
+    if (result && typeof result.catch === 'function') {
+      result.catch(() => {});
+    }
+  };
+
+  const handleLeave = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.pause();
+    video.currentTime = 0;
+  };
+
   return (
-    <article className="feed-card">
+    <article
+      className="feed-card"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
       <div className="feed-image">
         <div className="feed-actions" aria-label="Post actions">
           <ActionButton
@@ -74,6 +98,18 @@ function ProductCard({ product, liked, saved, onLike, onSave, onShare, onOpen })
           aria-label={`Open ${product.name}`}
         >
           <img src={product.image} alt={product.name} />
+          {product.video ? (
+            <video
+              ref={videoRef}
+              className="feed-card-video"
+              src={product.video}
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+            />
+          ) : null}
         </button>
 
         <div className="feed-meta">
@@ -88,7 +124,7 @@ function ProductCard({ product, liked, saved, onLike, onSave, onShare, onOpen })
             <span className="price-tag">{priceFormatter.format(product.price)}</span>
           </div>
 
-          <p className="feed-caption">{product.caption}</p>
+
         </div>
       </div>
     </article>

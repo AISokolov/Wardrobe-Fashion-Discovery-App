@@ -155,10 +155,10 @@
 
 .detail-actions-top {
   position: absolute;
-  top: 72px;
+  top: 335px;
   right: 16px;
   z-index: 2;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .detail-actions-bottom {

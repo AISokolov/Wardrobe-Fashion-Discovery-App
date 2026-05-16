@@ -1,10 +1,21 @@
 import './MessageRow.css';
 
+function Avatar({ message }) {
+  if (message.image) {
+    return (
+      <div className="message-avatar">
+        <img src={message.image} alt={message.name} />
+      </div>
+    );
+  }
+  return <div className="message-avatar">{message.initials}</div>;
+}
+
 function MessageRow({ message, onOpen }) {
   if (message.clickable) {
     return (
       <button type="button" className="message-row clickable" onClick={() => onOpen(message.id)}>
-        <div className="message-avatar">{message.initials}</div>
+        <Avatar message={message} />
         <div>
           <strong className="message-name">{message.name}</strong>
           <div className="message-preview">{message.preview}</div>
@@ -19,7 +30,7 @@ function MessageRow({ message, onOpen }) {
 
   return (
     <div className="message-row">
-      <div className="message-avatar">{message.initials}</div>
+      <Avatar message={message} />
       <div>
         <strong className="message-name">{message.name}</strong>
         <div className="message-preview">{message.preview}</div>

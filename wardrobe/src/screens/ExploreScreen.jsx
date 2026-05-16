@@ -67,7 +67,11 @@ function ExploreScreen({
             onClick={() => onOpenStory(story.id)}
           >
             <div className="story-avatar" style={{ background: story.color }}>
-              {story.initials}
+              {story.image ? (
+                <img src={story.image} alt={story.name} />
+              ) : (
+                story.initials
+              )}
             </div>
             <div className="story-name">{story.name}</div>
           </button>

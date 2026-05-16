@@ -19,6 +19,7 @@
 
 .feed-card-click {
   display: block;
+  position: relative;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -28,6 +29,21 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.feed-card-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.feed-card:hover .feed-card-video {
+  opacity: 1;
 }
 
 .feed-actions {
