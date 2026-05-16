@@ -20,11 +20,21 @@
 }
 
 .share-sheet-handle {
+  display: block;
   width: 56px;
   height: 5px;
   margin: 0 auto 14px;
+  padding: 0;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
+  border: none;
+  cursor: pointer;
+  transition: background 140ms ease, transform 140ms ease;
+}
+
+.share-sheet-handle:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scaleX(1.1);
 }
 
 .share-sheet-copy {
@@ -70,6 +80,14 @@
   font-weight: 700;
   background: rgba(229, 178, 114, 0.14);
   border: 1px solid rgba(229, 178, 114, 0.22);
+  overflow: hidden;
+}
+
+.share-target-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 999px;
 }
 
 .share-target-copy {

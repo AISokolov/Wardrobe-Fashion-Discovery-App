@@ -14,7 +14,12 @@ function ShareSheet({ isOpen, chats, product, onClose, onShareToChat }) {
         aria-modal="true"
         aria-label={`Share ${product.name}`}
       >
-        <div className="share-sheet-handle" />
+        <button
+          type="button"
+          className="share-sheet-handle"
+          onClick={onClose}
+          aria-label="Close share sheet"
+        />
         <div className="share-sheet-copy">
           <div className="eyebrow">Share</div>
           <h2 className="share-sheet-title">{product.name}</h2>
@@ -29,7 +34,13 @@ function ShareSheet({ isOpen, chats, product, onClose, onShareToChat }) {
               className="share-target"
               onClick={() => onShareToChat(chat.id)}
             >
-              <div className="share-target-avatar">{chat.initials}</div>
+              <div className="share-target-avatar">
+                {chat.image ? (
+                  <img src={chat.image} alt={chat.name} />
+                ) : (
+                  chat.initials
+                )}
+              </div>
               <div className="share-target-copy">
                 <strong>{chat.name}</strong>
                 <span>{chat.subtitle ?? chat.preview}</span>

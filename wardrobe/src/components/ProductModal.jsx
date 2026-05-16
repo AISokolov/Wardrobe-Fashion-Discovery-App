@@ -109,7 +109,7 @@ function ProductModal({
             </button>
             <button
               type="button"
-              className="detail-button detail-icon-button"
+              className="detail-button detail-icon-button detail-icon-button-shop"
               onClick={onShop}
               aria-label={`Shop ${product.name} via affiliate link`}
             >
