@@ -231,7 +231,7 @@ export const profile = {
     { label: 'Looks', value: '24' },
     { label: 'Inspired', value: '847' },
     { label: 'Following', value: '312' },
-    { label: 'Profit', value: 'EUR 642', tone: 'good' },
+    { label: 'Profit', value: '642€', tone: 'good' },
   ],
   tabs: ['Posts', 'Shared', 'Tagged'],
 };

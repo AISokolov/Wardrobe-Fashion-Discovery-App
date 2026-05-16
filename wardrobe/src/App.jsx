@@ -187,7 +187,7 @@ function App() {
 
   const handleToggleSave = (id) => {
     const added = toggleSetValue(setSavedIds, savedIds, id);
-    setToast(added ? 'Saved to closet' : 'Removed from closet');
+    setToast(added ? 'Added to closet' : 'Removed from closet');
   };
 
   const handleOpenShare = (productId) => {

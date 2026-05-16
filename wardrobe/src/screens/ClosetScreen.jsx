@@ -67,10 +67,10 @@ function ClosetScreen({
           ) : (
             <div className="empty-state">
               <strong>
-                No saved pieces in {activeFilter.toLowerCase()} yet.
+                Nothing in your closet under {activeFilter.toLowerCase()} yet.
               </strong>
               <p>
-                Save products from Explore and they will land here instantly.
+                Add products from Explore to your closet and they will land here instantly.
               </p>
             </div>
           )}

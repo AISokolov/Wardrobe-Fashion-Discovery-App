@@ -10,10 +10,10 @@ function ModalGlyph({ kind }) {
     );
   }
 
-  if (kind === 'save') {
+  if (kind === 'closet') {
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 4.5h10a1.5 1.5 0 0 1 1.5 1.5V20l-6.5-3.7L5.5 20V6A1.5 1.5 0 0 1 7 4.5Z" />
+        <path d="M10 4a2 2 0 1 1 2 2c0 1.5-1.2 2.2-2.1 2.9l-6.8 5.4A1 1 0 0 0 3.7 16h16.6a1 1 0 0 0 .6-1.8l-6.8-5.4C13.2 8.2 12 7.5 12 6" />
       </svg>
     );
   }
@@ -79,10 +79,10 @@ function ProductModal({
               type="button"
               className={`detail-button detail-icon-button ${saved ? 'active' : ''}`}
               onClick={onSave}
-              aria-label={`Save ${product.name}`}
+              aria-label={saved ? `Remove ${product.name} from closet` : `Add ${product.name} to closet`}
             >
               <span className="action-icon">
-                <ModalGlyph kind="save" />
+                <ModalGlyph kind="closet" />
               </span>
             </button>
             <button

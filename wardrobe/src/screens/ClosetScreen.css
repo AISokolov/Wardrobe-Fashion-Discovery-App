@@ -18,13 +18,13 @@
 .stat-value {
   display: block;
   color: var(--accent);
-  font-size: 1.8rem;
+  font-size: medium !important;
   line-height: 1;
 }
 
 .stat-label {
   color: rgba(244, 239, 231, 0.28);
-  font-size: 0.74rem;
+  font-size: 0.6rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
