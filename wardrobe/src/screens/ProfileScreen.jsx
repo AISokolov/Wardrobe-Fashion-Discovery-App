@@ -1,6 +1,6 @@
 import './ProfileScreen.css';
 
-function ProfileScreen({ profile, products, onOpenProduct }) {
+function ProfileScreen({ profile, products, onOpenProduct, onOpenDropLook }) {
   return (
     <section className="screen">
       <div className="screen-head">
@@ -31,7 +31,13 @@ function ProfileScreen({ profile, products, onOpenProduct }) {
 
           <div className="cta-row">
             <button type="button" className="cta-button">Edit Profile</button>
-            <button type="button" className="cta-button primary">+ Drop a Look</button>
+            <button
+              type="button"
+              className="cta-button primary"
+              onClick={onOpenDropLook}
+            >
+              + Drop a Look
+            </button>
           </div>
         </section>
 

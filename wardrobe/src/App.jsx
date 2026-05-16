@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import './App.css';
+import DropLookModal from './components/DropLookModal';
 import ProductModal from './components/ProductModal';
 import ShareSheet from './components/ShareSheet';
 import StoryViewer from './components/StoryViewer';
 import TabBar from './components/TabBar';
-import { inboxThreads, messages as initialMessages, profile, stories, tabItems } from './data/mockData';
-import products from './data/products.json';
+import { closetCategories, inboxThreads, messages as initialMessages, profile, stories, tabItems } from './data/mockData';
+import initialProducts from './data/products.json';
 import ExploreScreen from './screens/ExploreScreen';
 import ClosetScreen from './screens/ClosetScreen';
 import InboxScreen from './screens/InboxScreen';
@@ -49,19 +50,21 @@ function getPreview(message, productMap) {
 
 function App() {
   const persisted = readStorage();
+  const [products, setProducts] = useState(initialProducts);
   const [activeTab, setActiveTab] = useState(persisted?.activeTab ?? DEFAULT_TAB);
   const [activeFilter, setActiveFilter] = useState(persisted?.activeFilter ?? DEFAULT_FILTER);
   const [savedIds, setSavedIds] = useState(new Set(persisted?.saved ?? DEFAULT_SAVED));
   const [likedIds, setLikedIds] = useState(new Set(persisted?.liked ?? DEFAULT_LIKED));
   const [threadState, setThreadState] = useState(cloneThreads);
   const [selectedSizes, setSelectedSizes] = useState(() =>
-    Object.fromEntries(products.map((product) => [product.id, product.selectedSize])),
+    Object.fromEntries(initialProducts.map((product) => [product.id, product.selectedSize])),
   );
   const [activeDetailId, setActiveDetailId] = useState(null);
   const [activeThreadId, setActiveThreadId] = useState(null);
   const [composerText, setComposerText] = useState('');
   const [shareProductId, setShareProductId] = useState(null);
   const [activeStoryId, setActiveStoryId] = useState(null);
+  const [dropLookOpen, setDropLookOpen] = useState(false);
   const [toast, setToast] = useState('');
 
   useEffect(() => {
@@ -87,12 +90,12 @@ function App() {
 
   const productMap = useMemo(
     () => Object.fromEntries(products.map((product) => [product.id, product])),
-    [],
+    [products],
   );
 
   const savedProducts = useMemo(
     () => products.filter((product) => savedIds.has(product.id)),
-    [savedIds],
+    [products, savedIds],
   );
 
   const filteredSavedProducts = useMemo(() => {
@@ -245,6 +248,56 @@ function App() {
 
   const openProduct = (id) => setActiveDetailId(id);
 
+  const handleDropLook = (draft) => {
+    const slug = draft.name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '') || 'look';
+    const id = `${slug}-${Date.now().toString(36)}`;
+    const brandSlug = draft.brand.replace(/[^A-Za-z0-9]/g, '') || 'Brand';
+    const affiliateCutEuros = Math.max(1, Math.round(draft.price * 0.06));
+
+    const newProduct = {
+      id,
+      brand: draft.brand,
+      brandSlug,
+      name: draft.name,
+      price: draft.price,
+      category: draft.category,
+      collection: 'Personal Drop',
+      styleCode: id.toUpperCase(),
+      material: 'See product page',
+      shipping: '3-5 days',
+      affiliateCut: `Earn EUR ${affiliateCutEuros}`,
+      dropTag: 'YourDrop',
+      likes: 0,
+      caption: draft.caption || 'fresh drop from your closet',
+      description:
+        draft.description || 'A new look added straight from your profile.',
+      image: draft.image,
+      shopUrl: draft.shopUrl,
+      sizes: ['OS'],
+      selectedSize: 'OS',
+      unavailableSizes: [],
+      author: {
+        initials: (profile.username || 'YO').slice(0, 2).toUpperCase(),
+        handle: profile.username,
+        rank: 'your drop',
+      },
+      seller: {
+        name: draft.brand,
+        note: 'Linked via your affiliate URL',
+        rating: '—',
+        reviews: 'new',
+      },
+    };
+
+    setProducts((current) => [newProduct, ...current]);
+    setSelectedSizes((current) => ({ ...current, [id]: 'OS' }));
+    setDropLookOpen(false);
+    setToast('Dropped to your feed');
+  };
+
   const renderActiveScreen = () => {
     if (activeTab === 'explore') {
       return (
@@ -300,6 +353,7 @@ function App() {
         profile={profile}
         products={products.slice(0, 6)}
         onOpenProduct={openProduct}
+        onOpenDropLook={() => setDropLookOpen(true)}
       />
     );
   };
@@ -360,6 +414,14 @@ function App() {
         onClose={() => setActiveStoryId(null)}
         onNext={() => setActiveStoryId(resolvedStories[activeStoryIndex + 1]?.id ?? null)}
         onPrevious={() => setActiveStoryId(resolvedStories[activeStoryIndex - 1]?.id ?? null)}
+      />
+
+      <DropLookModal
+        isOpen={dropLookOpen}
+        categories={closetCategories.filter((category) => category !== 'All')}
+        profile={profile}
+        onClose={() => setDropLookOpen(false)}
+        onSubmit={handleDropLook}
       />
 
       {toast ? <div className="toast">{toast}</div> : null}
